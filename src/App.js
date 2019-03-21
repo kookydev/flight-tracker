@@ -12,7 +12,7 @@ class App extends Component {
         <div className="content">
           {/* <Route path="/" exact component={} /> */}
           <Route exact path="/" component={FlightMap} />
-          <Route path="/results" component={SearchResultList} />
+          <Route path="/results" render={(props) => <SearchResultList {...props} iata="MCR" name="Manchester Airport" location="Manchester, UK" /> } />
         </div>
         <div className="footer">
           <Link to="/" className="nav-link">
