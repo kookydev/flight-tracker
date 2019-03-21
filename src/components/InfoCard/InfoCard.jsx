@@ -3,6 +3,21 @@ import './InfoCard.css';
 
 class InfoCard extends Component {
 
+    speedCalc(mps) {
+        let displaySpeed = Math.floor((mps * 2.237) * 100) / 100;
+        return displaySpeed;
+    }
+
+    displayCalc(climb) {
+        let displayClimb = Math.floor((climb * 3.281) * 100) / 100;
+        return displayClimb;
+    }
+
+    altCalc(m) {
+        let displayAlt = Math.floor((m * 3.281) * 100) / 100;
+        return displayAlt;
+    }
+
     render() { 
         return (
             <div className="infoCardCont">
