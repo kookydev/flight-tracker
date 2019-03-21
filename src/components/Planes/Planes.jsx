@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import("./Planes.css");
 
 class Planes extends Component {
   state = { track: 0, callsign: "EZY185", height: 6500 };
   render() {
-    return <div>hello</div>;
+    return (
+      <div>
+        <i class="fas fa-plane plane" />
+      </div>
+    );
   }
 }
 

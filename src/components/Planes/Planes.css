@@ -1,0 +1,4 @@
+.plane {
+    color: var(--main-text-color);
+    transform: rotate(-90);
+}
