@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-class StatusBar extends Component {
+class FlightMap extends Component {
   constructor(props) {
     super(props);
     this.state = {  }
   }
   render() { 
-    return ( <h1>sp'ojggpgjpoop</h1> );
+    return (  
+      <h1>test</h1>
+    );
   }
 }
  
-export default StatusBar;
+export default FlightMap;
