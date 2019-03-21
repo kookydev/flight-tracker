@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+h1 { 
+    font-weight: 900;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.infoCardCont {
+    display: flex;
+    flex-flow: column;
+    background: grey;
+    font-family: 'Lato', sans-serif;
+}
+
+    .infoCardHead {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "arrival center departure";
+        background: darkgrey;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .departure {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        .center {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+            .centershape {
+                height: 70px;
+                width: 70px;
+                margin-top: 5px;
+                border-radius: 50%;
+                background: #ffcc08;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+
+                .planeIcon {
+                    transform: rotate(-30deg);
+                    font-size: 50px;
+                    margin-bottom: 4px;
+                    margin-left: 4px;
+                }
+
+
+        .arrival {
+            font-size: 1.5rem;
+            text-align: right;
+        }
+
+    .infoCardTime {
+        display: grid;
+        grid-template-columns: "1fr 1fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "departureTime arrivalTime";
+        background: darkgrey;
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .departureTime {
+            grid-area: departureTime;
+            text-align: left;
+        }
+
+        .arrivalTime {
+            grid-area: arrivalTime;
+            text-align: right;
+        }
+
+    .infoCardMovement {
+        display: grid;
+        grid-template-columns: "1fr 1fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "speed alt";
+        background: darkgrey;
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .flightSpeed {
+            grid-area: speed;
+            text-align: left;
+        }
+
+        .flightAlt {
+            grid-area: alt;
+            text-align: right;
+        }
+
+    .infoCardTrack {
+        display: grid;
+        grid-template-columns: "0.5fr 1.5fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "string graphic";
+        background: darkgrey;
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .trackString {
+            grid-area: string;
+            text-align: left;
+        }
+
+        .trackGraphicCont {
+            grid-area: graphic;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+
+        }
+
+        .trackIcon {
+            transform: rotate(180deg);
+            padding: 5px;
+            font-size: 40px;
+        }
