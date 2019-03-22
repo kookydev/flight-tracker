@@ -6,7 +6,11 @@ class SearchBar extends Component {
     this.state = {  }
   }
   render() { 
-    return ( <h1>jsgsgopj</h1> );
+    return (
+      <div className="container">
+        <i className="fas fa-search"></i>
+      </div>
+    );
   }
 }
  

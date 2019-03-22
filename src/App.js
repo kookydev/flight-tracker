@@ -4,6 +4,7 @@ import "./App.css";
 import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
 import SearchResultList from "./components/SearchResultList/SearchResultList";
+import SearchBar from './components/SearchBar/SearchBar';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Link to="/results" className="nav-link">
             ge
           </Link>
+          <SearchBar />
         </div>
       </Router>
     );
