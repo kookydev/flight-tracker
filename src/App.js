@@ -1,16 +1,14 @@
-import React, {
-  Component
-} from "react";
+
+import React, { Component } from "react";
+
 import "./App.css";
 // import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
 import SearchResultList from "./components/SearchResultList/SearchResultList";
 import SearchBar from "./components/SearchBar/SearchBar";
-import axios from "axios"
-import Planes from "./components/Planes/Planes"
-import InfoCard from './components/InfoCard/InfoCard';
-
-
+import axios from "axios";
+import Planes from "./components/Planes/Planes";
+import InfoCard from "./components/InfoCard/InfoCard";
 
 class App extends Component {
   state = {
@@ -19,14 +17,20 @@ class App extends Component {
       name: "",
       location: ""
     },
+<<<<<<< HEAD
     showResults: false,
     searchResults: {
       arrivals: [],
       departures: []
     }
+=======
+    planeData: {},
+    showResults: false
+>>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
   };
 
   inputHandler = searchString => {
+
     let options = {
       url: `https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/airports/locations/operational-list?api_key=ff258a50-4c91-11e9-95d2-fd99eb1d4f66&airports=${searchString}&states=&format=json`,
       json: true
@@ -34,11 +38,13 @@ class App extends Component {
     axios.get(options.url)
       .then(res => {
         console.log(res)
+
         this.setState({
           airportData: {
             iata: res.data[0].iatacode,
             name: res.data[0].airportName,
             location: res.data[0].countryCode
+<<<<<<< HEAD
           }
         })
         let startTime = Math.round((new Date).getTime() / 1000)
@@ -65,15 +71,33 @@ class App extends Component {
 
 
         // console.log(this.state)
+=======
+          },
+          showResults: true
+        });
+>>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
 
       })
+      .catch(err => console.log(err));
   };
 
+  planeDataHandler = (latmin, longmin, latmax, longmax) => {
+    let url = `https://opensky-network.org/api/states/all?lamin=${latmin}&lomin=${longmin}&lamax=${latmax}&lomax=${longmax}`;
+    axios
+      .get(url)
+      .then(res => {
+        this.setState({ planeData: res.states });
+      })
+      .catch(err => console.log(err));
+  };
 
+<<<<<<< HEAD
 
 
 
   render() {
+=======
+>>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
     return ( <
       div className = "container" >
       <
@@ -100,6 +124,7 @@ class App extends Component {
       /> < /
       div > <
       /div>
+
     );
   }
 }
