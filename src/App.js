@@ -7,7 +7,6 @@ import './App.css';
 class App extends Component {
   render() {
     return ( <
-      <
       div className = "container" >
       <
       div className = "content" / >
@@ -21,8 +20,8 @@ class App extends Component {
       SearchResultList flightData = {
         this.state.flightData
       }
-      /> <
-      /div> <
+      /> < /
+      div > <
       /div>
     );
   }
