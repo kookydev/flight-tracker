@@ -19,7 +19,11 @@ class App extends Component {
       name: "",
       location: ""
     },
-    showResults: false
+    showResults: false,
+    searchResults: {
+      arrivals: [],
+      departures: []
+    }
   };
 
   inputHandler = searchString => {
@@ -31,16 +35,41 @@ class App extends Component {
       .then(res => {
         console.log(res)
         this.setState({
-          flightData: {
+          airportData: {
             iata: res.data[0].iatacode,
             name: res.data[0].airportName,
             location: res.data[0].countryCode
-          },
-          showResults: true
-        });
-        console.log(this.state)
+          }
+        })
+        let startTime = Math.round((new Date).getTime() / 1000)
+        let endTime = startTime + 7200
+        console.log(`start: ${startTime}, end:${endTime}`)
+        axios.get(`https://opensky-network.org/api/flights/arrival?airport=${res.data[0].airportCode}&begin=${startTime-80000}&end=${endTime-80000}`).then(res => {
+          console.log(res)
+          this.setState({
+            searchResults: {
+              arrivals: res.data
+            }
+          })
+        })
+        axios.get(`https://opensky-network.org/api/flights/departure?airport=${res.data[0].airportCode}&begin=${startTime-80000}&end=${endTime-80000}`).then(res => {
+          console.log(res)
+          this.setState({
+            searchResults: {
+              departures: res.data
+            }
+          })
+        })
+
+
+
+
+        // console.log(this.state)
+
       })
   };
+
+
 
 
 
