@@ -5,7 +5,7 @@ class SearchResult extends Component {
   render() {
     return (
       <div className="container">
-        <h1>;xbv</h1>
+        <h1></h1>
       </div>
     );
   }

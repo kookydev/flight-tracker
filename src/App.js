@@ -1,54 +1,49 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
-import FlightMap from "./components/FlightMap/FlightMap";
+// import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
 import SearchResultList from "./components/SearchResultList/SearchResultList";
-import SearchBar from './components/SearchBar/SearchBar';
+import SearchBar from "./components/SearchBar/SearchBar";
+import axios from "axios"
 
 class App extends Component {
+  state = {
+    flightData: {
+      iata: "",
+      name: "",
+      location: ""
+    },
+    showResults: false
+  };
+
+  inputHandler = searchString => {
+    let options = {
+      url: `https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/airports/locations/operational-list?api_key=ff258a50-4c91-11e9-95d2-fd99eb1d4f66&airports=${searchString}&states=&format=json`,
+      json: true
+    };
+    axios.get(options.url)
+    .then(res => {
+      console.log(res)
+      this.setState({flightData: {
+        iata: res.data[0].iatacode,
+        name: res.data[0].airportName,
+        location: res.data[0].countryCode
+      },showResults: true}); 
+      console.log(this.state)
+    })
+  };
+
+ 
+
   render() {
     return (
-      <Router>
-        <div className="content">
-          {/* <Route path="/" exact component={} /> */}
-          <Route exact path="/" component={FlightMap} />
-          <Route path="/results" render={(props) => <SearchResultList {...props} iata="MCR" name="Manchester Airport" location="Manchester, UK" /> } />
-        </div>
+      <div className="container">
+        <div className="content" />
         <div className="footer">
-          <Link to="/" className="nav-link">
-            Testing
-          </Link>
-          {/* Info can be changed to whatever using as a test */}
-          <Link to="/results" className="nav-link">
-            ge
-          </Link>
-          <SearchBar />
+          <SearchBar func={this.inputHandler} />
+          <SearchResultList flightData={this.state.flightData} />
         </div>
-      </Router>
-=======
-import React, {
-  Component
-} from 'react';
-import Planes from "./components/Planes/Planes"
-import './App.css';
-
-class App extends Component {
-  render() {
-    return ( <
-      div className = "App" >
-      <
-      Planes track = {
-        180
-      }
-      callsign = "ABA1234"
-      planeHeight = {
-        100000
-      }
-      / > < /
-      div >
->>>>>>> master
+      </div>
     );
   }
 }
