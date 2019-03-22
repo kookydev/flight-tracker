@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShortInfo from '../ShortInfo/ShortInfo'
 import './InfoCard.css';
 
 class InfoCard extends Component {
@@ -21,22 +22,8 @@ class InfoCard extends Component {
     render() { 
         return (
             <div className="infoCardCont">
-                <div className="infoCardHead">
-                    <div className="departure">
-                        <h1>{this.props.departure}</h1>
-                    </div>
 
-                    <div className="center">
-                        <div className="centershape">
-                            <i className="fas fa-plane planeIcon"></i>
-                        </div>
-                        <p>{this.props.flightID}</p>
-                    </div>
-
-                    <div className="arrival">
-                        <h1>{this.props.arrival}</h1>
-                    </div>
-                </div>
+                <ShortInfo departure="MCR" arrival="AMS" flightID="EZY3001"/>
 
                 <div className="infoCardTime">
                     <div className="departureTime">
