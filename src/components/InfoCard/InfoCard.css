@@ -11,7 +11,7 @@ h2 {
 .infoCardCont {
     display: flex;
     flex-flow: column;
-    background: grey;
+    background: var(--main-bg-color);
     font-family: 'Lato', sans-serif;
 }
     .infoCardTime {
@@ -19,7 +19,7 @@ h2 {
         grid-template-columns: "1fr 1fr";
         grid-template-rows: "1fr";
         grid-template-areas: "departureTime arrivalTime";
-        background: darkgrey;
+        background: var(--secondary-bg-color);
         margin-top: 5px;
         padding: 0px 9px 0px 9px;
     }
@@ -39,7 +39,7 @@ h2 {
         grid-template-columns: "1fr 1fr";
         grid-template-rows: "1fr";
         grid-template-areas: "speed alt";
-        background: darkgrey;
+        background: var(--secondary-bg-color);
         margin-top: 5px;
         padding: 0px 9px 0px 9px;
     }
@@ -59,7 +59,7 @@ h2 {
         grid-template-columns: "0.5fr 1.5fr";
         grid-template-rows: "1fr";
         grid-template-areas: "string graphic";
-        background: darkgrey;
+        background: var(--secondary-bg-color);
         margin-top: 5px;
         padding: 0px 9px 0px 9px;
     }

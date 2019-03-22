@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "arrival center departure";
-    background: darkgrey;
+    background: var(--secondary-bg-color);
     padding: 0px 9px 0px 9px;
 }
 
@@ -23,7 +23,7 @@
             width: 70px;
             margin-top: 5px;
             border-radius: 50%;
-            background: #ffcc08;
+            background: var(--logo-bg-color);
             display: grid;
             justify-content: center;
             align-content: center;
