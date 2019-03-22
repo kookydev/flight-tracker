@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+h1 { 
+    font-weight: 900;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.infoCardCont {
+    display: flex;
+    flex-flow: column;
+    background: var(--main-bg-color);
+    font-family: 'Lato', sans-serif;
+}
+    .infoCardTime {
+        display: grid;
+        grid-template-columns: "1fr 1fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "departureTime arrivalTime";
+        background: var(--secondary-bg-color);
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .departureTime {
+            grid-area: departureTime;
+            text-align: left;
+        }
+
+        .arrivalTime {
+            grid-area: arrivalTime;
+            text-align: right;
+        }
+
+    .infoCardMovement {
+        display: grid;
+        grid-template-columns: "1fr 1fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "speed alt";
+        background: var(--secondary-bg-color);
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .flightSpeed {
+            grid-area: speed;
+            text-align: left;
+        }
+
+        .flightAlt {
+            grid-area: alt;
+            text-align: right;
+        }
+
+    .infoCardTrack {
+        display: grid;
+        grid-template-columns: "0.5fr 1.5fr";
+        grid-template-rows: "1fr";
+        grid-template-areas: "string graphic";
+        background: var(--secondary-bg-color);
+        margin-top: 5px;
+        padding: 0px 9px 0px 9px;
+    }
+
+        .trackString {
+            grid-area: string;
+            text-align: left;
+        }
+
+        .trackGraphicCont {
+            grid-area: graphic;
+            display: grid;
+            justify-content: right;
+            align-content: center;
+
+        }
+
+        .trackIcon {
+            transform: rotate(180deg);
+            padding: 5px;
+            font-size: 40px;
+        }
+
+
+@media only screen and (max-height: 670px) {
+    .infoCardTime {
+        grid-template-rows: "100px";
+    }
+    .infoCardMovement {
+        grid-template-rows: "100px";
+    }
+    .infoCardTrack{
+        grid-template-rows: "100px";
+    }
+        .trackIcon {
+            font-size: 30px;
+        }
+    h1 {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 0.5rem;
+    }
+}
