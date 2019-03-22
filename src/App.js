@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "./App.css";
 // import FlightMap from "./components/FlightMap/FlightMap";
@@ -5,6 +6,10 @@ import "./App.css";
 import SearchResultList from "./components/SearchResultList/SearchResultList";
 import SearchBar from "./components/SearchBar/SearchBar";
 import axios from "axios"
+import Planes from "./components/Planes/Planes"
+import InfoCard from './components/InfoCard/InfoCard';
+
+
 
 class App extends Component {
   state = {
@@ -37,12 +42,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="content" />
-        <div className="footer">
-          <SearchBar func={this.inputHandler} />
-          <SearchResultList flightData={this.state.flightData} />
-        </div>
+
+      <div className="App">
+        <InfoCard flightID="EZY3001" departure="MCR" arrival="AMS" departureTime="15:20" arrivalTime="16:20" speed="216" altitude="3166" track="270"/>
+
       </div>
     );
   }

@@ -1,0 +1,67 @@
+.infoCardHead {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "arrival center departure";
+    background: var(--secondary-bg-color);
+    padding: 0px 9px 0px 9px;
+}
+
+    .departure {
+        font-size: 1.5rem;
+        text-align: left;
+        align-self: center;
+    }
+
+    .center {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+        .centershape {
+            height: 70px;
+            width: 70px;
+            margin-top: 5px;
+            border-radius: 50%;
+            background: var(--logo-bg-color);
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+            .planeIcon {
+                transform: rotate(-30deg);
+                font-size: 50px;
+                margin-bottom: 2px;
+                margin-left: 2px;
+            }
+
+
+    .arrival {
+        font-size: 1.5rem;
+        text-align: right;
+        align-self: center;
+    }
+
+@media only screen and (max-height: 670px) {
+    .infoCardHead {
+        grid-template-rows: "100px";
+    }
+        .centershape {
+            height: 40px;
+            width: 40px;
+        }
+            .planeIcon {
+                font-size: 30px;
+            }
+    h1 {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 0.5rem;
+    }
+}
