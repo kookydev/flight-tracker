@@ -12,20 +12,21 @@ class SearchBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // debugger;
     this.props.func(this.state.value);
   };
 
   render() {
     return (
-      <form className="container" onSubmit={this.handleSubmit}>
-        <button type="submit" value="submit">
-          <i className="fas fa-search fa-5x" />
+      <form className="footer" onSubmit={this.handleSubmit}>
+        <button className="search-btn" type="submit" value="submit">
+          <i className="fas fa-search fa-4x" />
         </button>
         <input
+          className="search-input"
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
+          placeholder="Search..."
         />
       </form>
     );
