@@ -11,8 +11,7 @@ class FlightMap extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-        sw: [0.1278, 51.5074],
-        ne: [0.5217, 51.2787],
+
      }
   }
 
@@ -26,7 +25,7 @@ class FlightMap extends Component {
             height: "100vh",
             width: "100vw"
           }}
-          fitBounds={sw ne}        >
+          center={[-2.8931, 53.1934]}        >
         </Map>
       </div>
     );
