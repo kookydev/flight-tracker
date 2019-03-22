@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import './SearchResult.css';
+import React from "react";
+import "./SearchResult.css";
 
-class SearchResult extends Component {
-  render() {
-    return (
-      <div className="container">
-        <h1></h1>
-      </div>
-    );
-  }
-}
+const SearchResult = props => {
+  return (
+    <>
+      <span className="carrier">{props.carrier}</span>
+      <span className="flight">{props.flight}</span>
+      <span className="destination">{props.destination}</span>
+      <span className="departure">{props.departure}</span>
+    </>
+  );
+};
 
 export default SearchResult;

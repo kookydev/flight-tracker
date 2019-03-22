@@ -10,7 +10,7 @@ class SearchBar extends Component {
     this.setState({ value: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     // debugger;
     this.props.func(this.state.value);

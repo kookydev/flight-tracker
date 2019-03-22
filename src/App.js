@@ -1,4 +1,6 @@
+
 import React, { Component } from "react";
+
 import "./App.css";
 // import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
@@ -10,7 +12,7 @@ import InfoCard from "./components/InfoCard/InfoCard";
 
 class App extends Component {
   state = {
-    flightData: {
+    airportData: {
       iata: "",
       name: "",
       location: ""
@@ -20,10 +22,15 @@ class App extends Component {
   };
 
   inputHandler = searchString => {
-    let url = `https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/airports/locations/operational-list?api_key=ff258a50-4c91-11e9-95d2-fd99eb1d4f66&airports=${searchString}&states=&format=json`;
-    axios
-      .get(url)
+
+    let options = {
+      url: `https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/airports/locations/operational-list?api_key=ff258a50-4c91-11e9-95d2-fd99eb1d4f66&airports=${searchString}&states=&format=json`,
+      json: true
+    };
+    axios.get(options.url)
       .then(res => {
+        console.log(res)
+
         this.setState({
           flightData: {
             iata: res.data[0].iatacode,
@@ -32,6 +39,7 @@ class App extends Component {
           },
           showResults: true
         });
+
       })
       .catch(err => console.log(err));
   };
@@ -46,20 +54,33 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  render() {
-    return (
-      <div className="App">
-        <InfoCard
-          flightID="EZY3001"
-          departure="MCR"
-          arrival="AMS"
-          departureTime="15:20"
-          arrivalTime="16:20"
-          speed="216"
-          altitude="3166"
-          track="270"
-        />
-      </div>
+    return ( <
+      div className = "container" >
+      <
+      InfoCard flightID = "EZY3001"
+      departure = "MCR"
+      arrival = "AMS"
+      departureTime = "15:20"
+      arrivalTime = "16:20"
+      speed = "216"
+      altitude = "3166"
+      track = "270" / >
+      <
+      div className = "content" / >
+      <
+      div className = "footer" >
+      <
+      SearchBar func = {
+        this.inputHandler
+      }
+      /> <
+      SearchResultList airportData = {
+        this.state.airportData
+      }
+      /> < /
+      div > <
+      /div>
+
     );
   }
 }
