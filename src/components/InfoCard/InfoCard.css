@@ -72,7 +72,7 @@ h2 {
         .trackGraphicCont {
             grid-area: graphic;
             display: grid;
-            justify-content: center;
+            justify-content: right;
             align-content: center;
 
         }

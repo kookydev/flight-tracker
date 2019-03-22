@@ -10,6 +10,7 @@
     .departure {
         font-size: 1.5rem;
         text-align: left;
+        align-self: center;
     }
 
     .center {
@@ -32,14 +33,15 @@
             .planeIcon {
                 transform: rotate(-30deg);
                 font-size: 50px;
-                margin-bottom: 4px;
-                margin-left: 4px;
+                margin-bottom: 2px;
+                margin-left: 2px;
             }
 
 
     .arrival {
         font-size: 1.5rem;
         text-align: right;
+        align-self: center;
     }
 
 @media only screen and (max-height: 670px) {

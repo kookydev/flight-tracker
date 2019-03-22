@@ -21,11 +21,6 @@ class InfoCard extends Component {
         return displaySpeed;
     }
 
-    climbCalc(climb) {
-        let displayClimb = Math.floor((climb * 3.281));
-        return displayClimb;
-    }
-
     altCalc(m) {
         let displayAlt = Math.floor((m * 3.281));
         return displayAlt;
