@@ -127,3 +127,10 @@ h2 {
             padding: 5px;
             font-size: 40px;
         }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background: #ffcc08;
+    }
+}

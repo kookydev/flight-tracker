@@ -4,17 +4,17 @@ import './InfoCard.css';
 class InfoCard extends Component {
 
     speedCalc(mps) {
-        let displaySpeed = Math.floor((mps * 2.237) * 100) / 100;
+        let displaySpeed = Math.floor((mps * 2.237));
         return displaySpeed;
     }
 
-    displayCalc(climb) {
-        let displayClimb = Math.floor((climb * 3.281) * 100) / 100;
+    climbCalc(climb) {
+        let displayClimb = Math.floor((climb * 3.281));
         return displayClimb;
     }
 
     altCalc(m) {
-        let displayAlt = Math.floor((m * 3.281) * 100) / 100;
+        let displayAlt = Math.floor((m * 3.281));
         return displayAlt;
     }
 
@@ -53,12 +53,12 @@ class InfoCard extends Component {
                 <div className="infoCardMovement">
                     <div className="flightSpeed">
                         <h1>Speed</h1>
-                        <h2>{this.props.speed}<sub>mph</sub></h2>
+                        <h2>{this.speedCalc(216)}<sub>mph</sub></h2>
                     </div>
 
                     <div className="flightAlt">
                         <h1>Altitude</h1>
-                        <h2>{this.props.altitude}<sub>ft</sub></h2>
+                        <h2>{this.altCalc(3962)}<sub>ft</sub></h2>
                     </div>
                 </div>
 
