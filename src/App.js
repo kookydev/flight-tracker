@@ -7,17 +7,23 @@ import './App.css';
 class App extends Component {
   render() {
     return ( <
-      div className = "App" >
       <
-      Planes track = {
-        180
+      div className = "container" >
+      <
+      div className = "content" / >
+      <
+      div className = "footer" >
+      <
+      SearchBar func = {
+        this.inputHandler
       }
-      callsign = "ABA1234"
-      planeHeight = {
-        100000
+      /> <
+      SearchResultList flightData = {
+        this.state.flightData
       }
-      / > < /
-      div >
+      /> <
+      /div> <
+      /div>
     );
   }
 }
