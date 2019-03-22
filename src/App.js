@@ -1,5 +1,6 @@
-
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 
 import "./App.css";
 // import FlightMap from "./components/FlightMap/FlightMap";
@@ -49,11 +50,13 @@ class App extends Component {
     axios
       .get(url)
       .then(res => {
-        this.setState({ planeData: res.states });
+        this.setState({
+          planeData: res.states
+        });
       })
       .catch(err => console.log(err));
   };
-
+  render() {
     return ( <
       div className = "container" >
       <
