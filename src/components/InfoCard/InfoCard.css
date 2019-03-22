@@ -129,8 +129,36 @@ h2 {
         }
 
 
-@media only screen and (max-width: 600px) {
-    body {
-        background: #ffcc08;
+@media only screen and (max-height: 670px) {
+    .infoCardHead {
+        grid-template-rows: "100px";
+    }
+        .centershape {
+            height: 40px;
+            width: 40px;
+        }
+            .planeIcon {
+                font-size: 30px;
+            }
+    .infoCardTime {
+        grid-template-rows: "100px";
+    }
+    .infoCardMovement {
+        grid-template-rows: "100px";
+    }
+    .infoCardTrack{
+        grid-template-rows: "100px";
+    }
+        .trackIcon {
+            font-size: 30px;
+        }
+    h1 {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 0.5rem;
     }
 }
