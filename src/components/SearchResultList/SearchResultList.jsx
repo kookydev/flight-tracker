@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React from "react";
+import "./SearchResultList.css";
+import AirportInfo from '../AirportInfo/AirportInfo';
 
-class SearchResultList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
-    return ( <h1>do;igogng</h1> );
-  }
+const SearchResultList = props => {
+
+
+    return (
+      <div className="container">
+        <AirportInfo airportData={props.flightData} />
+      </div>
+    );
+
 }
- 
+
+
+
 export default SearchResultList;

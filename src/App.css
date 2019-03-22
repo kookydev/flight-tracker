@@ -2,4 +2,11 @@
   --main-bg-color: #7b7b7b;
   --secondary-bg-color: #a9a9a9;
   --logo-bg-color: #ffcc08;
+  --main-text-color: #000000;
 }
+
+.App {
+  text-align: center;
+}
+
+
