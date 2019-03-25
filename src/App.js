@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
-// import FlightMap from "./components/FlightMap/FlightMap";
+import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
 import SearchResultList from "./components/SearchResultList/SearchResultList";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -56,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+      <FlightMap />
         <InfoCard
           flightID="EZY3001"
           departure="MCR"
@@ -64,7 +65,7 @@ class App extends Component {
           arrivalTime="16:20"
           speed="216"
           altitude="3166"
-          track="270"
+          track="180"
         />
         <div className="content" />
         <div className="footer">

@@ -26,6 +26,15 @@ class InfoCard extends Component {
         return displayAlt;
     }
 
+    trackCalc(t) {
+        let displayTrack = t - 90;
+        document.getElementById("trackIcon").style.transform = `rotate(${displayTrack}deg)`
+    }
+
+    componentDidMount() {
+        this.trackCalc(this.state.track)
+    }
+
     render() { 
         return (
             <div className="infoCardCont">
@@ -63,7 +72,7 @@ class InfoCard extends Component {
                     </div>
 
                     <div className="trackGraphicCont">
-                    <i className="fas fa-plane trackIcon"></i>
+                    <i className="fas fa-plane" id="trackIcon"></i>
                     </div>
                 </div>
             </div>

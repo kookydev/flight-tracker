@@ -77,8 +77,7 @@ h2 {
 
         }
 
-        .trackIcon {
-            transform: rotate(180deg);
+        #trackIcon {
             padding: 5px;
             font-size: 40px;
         }
