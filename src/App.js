@@ -17,16 +17,11 @@ class App extends Component {
       name: "",
       location: ""
     },
-<<<<<<< HEAD
     showResults: false,
     searchResults: {
       arrivals: [],
       departures: []
     }
-=======
-    planeData: {},
-    showResults: false
->>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
   };
 
   inputHandler = searchString => {
@@ -44,7 +39,6 @@ class App extends Component {
             iata: res.data[0].iatacode,
             name: res.data[0].airportName,
             location: res.data[0].countryCode
-<<<<<<< HEAD
           }
         })
         let startTime = Math.round((new Date).getTime() / 1000)
@@ -71,11 +65,6 @@ class App extends Component {
 
 
         // console.log(this.state)
-=======
-          },
-          showResults: true
-        });
->>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
 
       })
       .catch(err => console.log(err));
@@ -91,13 +80,10 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-<<<<<<< HEAD
 
 
 
   render() {
-=======
->>>>>>> eb7155594c38fc91b587e3cdd5121bf60f9a2a49
     return ( <
       div className = "container" >
       <

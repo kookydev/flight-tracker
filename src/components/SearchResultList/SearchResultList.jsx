@@ -6,6 +6,7 @@ const SearchResultList = props => {
   return (
     <div className="container">
       <AirportInfo airportData={props.airportData} />
+      
     </div>
   );
 };
