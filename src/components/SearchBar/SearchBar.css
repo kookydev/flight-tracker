@@ -1,0 +1,30 @@
+@import "../../App.css";
+
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+  padding: 0.2em 0.4em;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+}
+
+.search-btn {
+  color: var(--main-text-color);
+  margin-right: 2em;
+}
+
+.search-input {
+  font-size: 20px;
+  width: 10em;
+  height: 2em;
+  outline: 0;
+  border-width: 0 0 0.2em;
+  padding-left: 0.2em;
+  text-align: left;
+  background-color: transparent;
+  color: var(--main-text-color);
+  border-color: var(--logo-bg-color);
+}
