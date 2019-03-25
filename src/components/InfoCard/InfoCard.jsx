@@ -76,7 +76,7 @@ class InfoCard extends Component {
                     </div>
                 </div>
 
-                <div className="infoCardTrack">
+                {/* <div className="infoCardTrack">
                     <div className="trackString">
                         <h1>Track</h1>
                         <h2>{currentPlane[10]}º</h2>
@@ -85,7 +85,7 @@ class InfoCard extends Component {
                     <div className="trackGraphicCont">
                     <i className="fas fa-plane" id="trackIcon"></i>
                     </div>
-                </div>
+                </div> */}
             </div>
           );
     }
