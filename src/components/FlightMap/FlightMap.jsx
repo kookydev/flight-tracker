@@ -22,7 +22,7 @@ class FlightMap extends Component {
         <Map
           style="mapbox://styles/mapbox/streets-v9"
           containerStyle={{
-            height: "100vh",
+            height: "30vh",
             width: "100vw"
           }}
           center={[-2.8931, 53.1934]}        >

@@ -3,15 +3,15 @@ import React, {
 } from 'react';
 import Planes from "./components/Planes/Planes"
 import FlightMap from "./components/FlightMap/FlightMap"
+import InfoCard from "./components/InfoCard/InfoCard"
 import './App.css';
 
 class App extends Component {
   render() {
-    let hi = "Hi"
     return ( 
       <div>
-        <h1>{hi}</h1>
         <FlightMap />
+        <InfoCard />
       </div>
     );
   }
