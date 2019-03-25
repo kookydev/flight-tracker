@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
-// import FlightMap from "./components/FlightMap/FlightMap";
+import FlightMap from "./components/FlightMap/FlightMap";
 // import SearchBar from "./components/SearchBar/SearchBar"; Waiting to be made
 import SearchResultList from "./components/SearchResultList/SearchResultList";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -44,18 +44,24 @@ class App extends Component {
 
   planeDataHandler = (latmin, longmin, latmax, longmax) => {
     let url = `https://opensky-network.org/api/states/all?lamin=${latmin}&lomin=${longmin}&lamax=${latmax}&lomax=${longmax}`;
-    axios
-      .get(url)
-      .then(res => {
-        this.setState({
-          planeData: res.states
-        });
-      })
-      .catch(err => console.log(err));
+    axios.get(url).then(res => {
+      this.setState({ planeData: res.data.states });
+    })
+    .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    this.planeDataHandler('49.959999905', '-7.57216793459', '58.6350001085', '1.68153079591')
+  }
+
+  componentDidUpdate() {
+    console.log(this.state)
+  }
+
   render() {
     return (
       <div className="container">
+        <FlightMap />
         <InfoCard
           flightID="EZY3001"
           departure="MCR"
@@ -68,9 +74,9 @@ class App extends Component {
         />
         <div className="content" />
         <div className="footer">
-          <SearchBar func={this.inputHandler} />{" "}
-          <SearchResultList airportData={this.state.airportData} />{" "}
-        </div>{" "}
+          <SearchBar func={this.inputHandler} />
+          <SearchResultList airportData={this.state.airportData} />
+        </div>
       </div>
     );
   }
