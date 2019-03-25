@@ -56,21 +56,23 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <InfoCard
-          flightID="EZY3001"
-          departure="MCR"
-          arrival="AMS"
-          departureTime="15:20"
-          arrivalTime="16:20"
-          speed="216"
-          altitude="3166"
-          track="270"
-        />
-        <div className="content" />
+        <div className="content">
+          <InfoCard
+            flightID="EZY3001"
+            departure="MCR"
+            arrival="AMS"
+            departureTime="15:20"
+            arrivalTime="16:20"
+            speed="216"
+            altitude="3166"
+            track="270"
+          />
+          <SearchResultList airportData={this.state.airportData} />
+          <Planes 
+        </div>
         <div className="footer">
-          <SearchBar func={this.inputHandler} />{" "}
-          <SearchResultList airportData={this.state.airportData} />{" "}
-        </div>{" "}
+          <SearchBar func={this.inputHandler} />
+        </div>
       </div>
     );
   }
