@@ -8,13 +8,15 @@ class Planes extends Component {
     height: this.props.planeHeight
   };
 
+  
+
   render() {
     let planeRotate = this.state.track - 90;
 
     return (
       <div>
         <i
-          class="fas fa-plane plane"
+          className="fas fa-plane plane"
           style={{ transform: `rotate(${planeRotate}deg) scale(1.4)` }}
         />
         <p className="plane-details">{this.state.callsign}</p>

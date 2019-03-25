@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ReactMapboxGl from "react-mapbox-gl";
+import { Layer, Feature, Marker} from "react-mapbox-gl";
+import Planes from "../Planes/Planes"
 import "./FlightMap";
 
 const Map = ReactMapboxGl({
@@ -14,9 +16,7 @@ class FlightMap extends Component {
 
 
 
-  render() {
-    
-    
+  render(props) {
     return (
       <div className="flightMapCont">
         <Map
@@ -30,7 +30,18 @@ class FlightMap extends Component {
         
           maxBounds={this.state.maxBounds}
         >
-          
+        {this.props.data.map((obj, i) => {
+         console.log(obj);
+         return (
+          <Marker
+            coordinates={[obj[5], obj[6]]}
+            onClick={() => this.props.clickHandler(obj)}
+            >
+            <Planes height={Math.floor((obj[13] * 3.281))} callsign={obj[1]} track={obj[10]}/>
+          </Marker>
+         );
+       })}
+
         </Map>
       </div>
     );

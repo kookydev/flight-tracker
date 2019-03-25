@@ -16,8 +16,15 @@ class App extends Component {
       name: "",
       location: ""
     },
-    planeData: {},
-    showResults: false
+    planeData: [],
+    showResults: false,
+    currentPlane: {
+      callsign: "",
+      origin: "",
+      speed: "",
+      track: "",
+      alt: "",
+    }
   };
 
   inputHandler = searchString => {
@@ -50,6 +57,23 @@ class App extends Component {
     .catch(err => console.log(err));
   };
 
+  clickHandler = (selectedPlane) => {
+    let callsign = selectedPlane[1]
+    this.state.planeData.forEach(plane => {
+      if (plane[1] === callsign) {
+        this.setState({ currentPlane: selectedPlane})
+      }
+    })
+    // this.setState({ currentPlane: {
+    //   callsign: this.state.planeData[i][1], 
+    //   origin: this.state.planeData[i][2], 
+    //   speed: this.state.planeData[i][9],
+    //   track: this.state.planeData[i][10],
+    //   alt: this.state.planeData[i][13],
+    // }
+    // })
+  }
+
   componentDidMount() {
     this.planeDataHandler('49.959999905', '-7.57216793459', '58.6350001085', '1.68153079591')
   }
@@ -59,22 +83,12 @@ class App extends Component {
   }
 
   render() {
+    const { currentPlane } = this.state
     return (
       <div className="container">
-<<<<<<< HEAD
-      <FlightMap />
-=======
-        <FlightMap />
->>>>>>> master
+        <FlightMap data={this.state.planeData} clickHandler={this.clickHandler}/>
         <InfoCard
-          flightID="EZY3001"
-          departure="MCR"
-          arrival="AMS"
-          departureTime="15:20"
-          arrivalTime="16:20"
-          speed="216"
-          altitude="3166"
-          track="180"
+          currentPlane={currentPlane}
         />
         <div className="content" />
         <div className="footer">
