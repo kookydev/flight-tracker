@@ -1,4 +1,4 @@
-This project was conducted over a 2 1/2 day Sprint by me and another 2 Junior Devs. 
+This project was conducted over a 2 1/2 day Sprint by me and 2 other Junior Devs. 
 
 It's not complete but I quite like that it's an illustration of how far we got in such a short space of time. 
 
